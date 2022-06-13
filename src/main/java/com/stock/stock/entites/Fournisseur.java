@@ -1,6 +1,5 @@
 package com.stock.stock.entites;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,23 +10,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "categorie")
+@Table(name = "Fournisseur")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Category {
-
-
+public class Fournisseur {
     private Long id;
-    private String libelle;
+    private String nom;
+    private String prenom;
+    private String email;
+    private String adresse;
+    private String cp;
+    private String tel;
 
 
     @Override
     public String toString() {
-        return "Category{" +
+        return "Fournisseur{" +
                 "id=" + id +
-                ", libelle='" + libelle + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", cp='" + cp + '\'' +
+                ", tel='" + tel + '\'' +
                 '}';
     }
 
