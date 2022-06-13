@@ -16,18 +16,12 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class Produit {
+    @Id
     private Long id;
     private Integer stock;
     private Integer libelle;
     private float prix;
     private String photo;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    @Id
-    public Long getId() {
-        return id;
-    }
 }

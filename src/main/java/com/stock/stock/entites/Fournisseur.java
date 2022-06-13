@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class Fournisseur {
+    @Id
     private Long id;
     private String nom;
     private String prenom;
@@ -38,12 +39,5 @@ public class Fournisseur {
                 '}';
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    @Id
-    public Long getId() {
-        return id;
-    }
 }

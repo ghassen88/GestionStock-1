@@ -2,6 +2,7 @@ package com.stock.stock.controller;
 
 
 import com.stock.stock.entites.Category;
+import com.stock.stock.repositories.CategoryRepository;
 import com.stock.stock.service.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.RepositoryDefinition;
@@ -13,12 +14,12 @@ public class CategoryController {
 
 
     @Autowired
-    CategoryServiceImpl categoryService;
+    CategoryRepository categoryService;
 
     @PostMapping(value = "/addCat")
     public void  AjouterCat(Category category){
 
 
-        categoryService.Ajouter(category);
+        categoryService.save(category);
     }
 }

@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Setter
 public class Category {
 
-
+    @Id
     private Long id;
     private String libelle;
 
@@ -31,12 +31,5 @@ public class Category {
                 '}';
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    @Id
-    public Long getId() {
-        return id;
-    }
 }
