@@ -10,6 +10,7 @@ import com.stock.stock.exception.ErrorCodes;
 import com.stock.stock.exception.InvalidEntityException;
 import com.stock.stock.service.ProduitService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import com.stock.stock.repositories.ProduitRepository;
@@ -23,14 +24,16 @@ import java.util.stream.Collectors;
 @Slf4j
 public class ProduitServiceImpl implements ProduitService {
 
+@Autowired
 
-    private ProduitRepository produitRepository;
-
-    //injection par constructor
-    public ProduitServiceImpl(ProduitRepository produitRepository) {
-
-        this.produitRepository = produitRepository;
-    }
+ProduitRepository produitRepository;
+//    private ProduitRepository produitRepository;
+//
+//    //injection par constructor
+//    public ProduitServiceImpl(ProduitRepository produitRepository) {
+//
+//        this.produitRepository = produitRepository;
+//    }
 
 
     @Override
