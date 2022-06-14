@@ -1,24 +1,37 @@
 package com.stock.stock.controller;
 
 
+import com.stock.stock.controller.api.CategoryApi;
+import com.stock.stock.dto.ProduitDto;
 import com.stock.stock.entites.Category;
-import com.stock.stock.service.CategoryServiceImpl;
+import com.stock.stock.service.impl.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.RepositoryDefinition;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping(value = "/categorie")
-public class CategoryController {
+
+public class CategoryController implements CategoryApi {
 
 
-    @Autowired
-    CategoryServiceImpl categoryService;
+    @Override
+    public ProduitDto save(ProduitDto produitDto) {
+        return null;
+    }
 
-    @PostMapping(value = "/addCat")
-    public void  AjouterCat(Category category){
+    @Override
+    public ProduitDto findById(Integer id) {
+        return null;
+    }
 
+    @Override
+    public List<ProduitDto> finAll() {
+        return null;
+    }
 
-        categoryService.Ajouter(category);
+    @Override
+    public void delete(Integer id) {
+
     }
 }

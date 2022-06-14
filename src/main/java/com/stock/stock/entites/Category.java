@@ -6,8 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "categorie")
@@ -15,18 +18,19 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Category {
+
+public class Category extends AbstractEntity {
 
 
-    private Integer id;
+    @Column(name = "code")
+    private String code;
+
+    @Column(name = "libelle")
     private String libelle;
 
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", libelle='" + libelle + '\'' +
-                '}';
-    }
+    @OneToMany(mappedBy = "category")
+    private List<Produit> produits;
+
+
 }
